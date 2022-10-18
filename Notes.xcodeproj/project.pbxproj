@@ -13,6 +13,7 @@
 		2C88EA7428FEAC7000689000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C88EA7328FEAC7000689000 /* Assets.xcassets */; };
 		2C88EA7728FEAC7000689000 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C88EA7628FEAC7000689000 /* Preview Assets.xcassets */; };
 		2C88EA8228FEACD400689000 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88EA8128FEACD400689000 /* Note.swift */; };
+		2C88EA8428FF3EAF00689000 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C88EA8328FF3EAF00689000 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2C88EA7328FEAC7000689000 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C88EA7628FEAC7000689000 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C88EA8128FEACD400689000 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		2C88EA8328FF3EAF00689000 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				2C88EA8128FEACD400689000 /* Note.swift */,
 				2C88EA6F28FEAC6E00689000 /* NotesApp.swift */,
 				2C88EA7128FEAC6E00689000 /* ContentView.swift */,
+				2C88EA8328FF3EAF00689000 /* DetailView.swift */,
 				2C88EA7328FEAC7000689000 /* Assets.xcassets */,
 				2C88EA7528FEAC7000689000 /* Preview Content */,
 			);
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C88EA7228FEAC6E00689000 /* ContentView.swift in Sources */,
+				2C88EA8428FF3EAF00689000 /* DetailView.swift in Sources */,
 				2C88EA7028FEAC6E00689000 /* NotesApp.swift in Sources */,
 				2C88EA8228FEACD400689000 /* Note.swift in Sources */,
 			);
