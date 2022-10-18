@@ -12,7 +12,15 @@ struct ContentView: View {
     @State private var text = ""
     
     var body: some View {
+    
         NavigationStack {
+            NavigationLink(destination: AboutView(name: "Marcus")){
+                Text("About Notes App...")
+                    .fixedSize()
+                    .foregroundColor(.green)
+            }
+            .fixedSize()
+            
             HStack {
                 TextField("Add note", text: $text)
                 

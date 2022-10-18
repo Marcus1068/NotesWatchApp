@@ -19,7 +19,7 @@ struct DetailView: View {
                 .navigationTitle("Note \(index + 1)")
                 .padding()
                 .foregroundColor(.blue)
-            Text("Note \(index + 1) of \(count)")
+            Text("Note \(index + 1)/\(count)")
                 .padding()
         }
     }
