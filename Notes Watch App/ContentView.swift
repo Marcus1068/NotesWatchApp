@@ -21,14 +21,18 @@ struct ContentView: View {
             }
             .fixedSize()
             
+            Divider()
+                .padding(2)
+            
             HStack {
                 TextField("Add note", text: $text)
                 
                 Button {
                     guard text.isEmpty == false else { return }
                     
-                    let note = Note(id: UUID(), text: text)
+                    let note = Note(id: UUID(), text: text, createDate: Date.now)
                     notes.append(note)
+                    save()
                     text = ""
                 } label: {
                     Image(systemName: "plus")
@@ -36,6 +40,7 @@ struct ContentView: View {
                 }
                 .fixedSize()
                 .tint(.blue)
+                .buttonBorderShape(.roundedRectangle)
             }
             
             List {
@@ -51,14 +56,40 @@ struct ContentView: View {
             }
             .navigationTitle("Notes App")
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear(perform: load)
         }
     }
     
+    // delete row from list
     func delete(offsets: IndexSet) {
         withAnimation {
             notes.remove(atOffsets: offsets)
+            save()
         }
     }
+    
+    // load from JSON file
+    func load() {
+        do {
+            let url = URL.documentsDirectory.appending(path: "notes")
+            let data = try Data(contentsOf: url)
+            notes = try JSONDecoder().decode([Note].self, from: data)
+        } catch {
+            // do nothing
+        }
+    }
+    
+    // save to JSON file in document dir
+    func save() {
+        do {
+            let data = try JSONEncoder().encode(notes)
+            let url = URL.documentsDirectory.appending(path: "notes")
+            try data.write(to: url, options: [.atomic, .completeFileProtection])
+        } catch {
+            print("Save failed")
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

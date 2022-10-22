@@ -8,7 +8,8 @@
 import Foundation
 
 
-struct Note: Identifiable {
+struct Note: Identifiable, Codable {
     let id: UUID
     let text: String
+    let createDate: Date
 }
