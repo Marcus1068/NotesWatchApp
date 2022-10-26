@@ -11,6 +11,9 @@ struct ContentView: View {
     @State private var notes = [Note]()
     @State private var text = ""
     
+    
+    @AppStorage("lineCount") var lineCount = 1
+    
     var body: some View {
     
         NavigationStack {
@@ -49,10 +52,25 @@ struct ContentView: View {
                         DetailView(index: i, note: notes[i], count: notes.count)
                     } label: {
                         Text(notes[i].text)
-                            .lineLimit(3)
+                            .lineLimit(lineCount)
                     }
                 }
                 .onDelete(perform: delete)
+                
+                Button("Lines: \(lineCount)") {
+                    lineCount += 1
+
+                    if lineCount == 4 {
+                        lineCount = 1
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.green)
+                //.fixedSize()
+                
+                
+                
+
             }
             .navigationTitle("Notes App")
             .navigationBarTitleDisplayMode(.inline)
